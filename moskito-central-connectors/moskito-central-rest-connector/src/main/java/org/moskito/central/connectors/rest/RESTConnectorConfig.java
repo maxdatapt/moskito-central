@@ -61,6 +61,14 @@ public class RESTConnectorConfig extends AbstractCentralConnectorConfig {
      * TrustStore password.
      */
     private String trustStorePassword;
+    
+    /** The application name. */
+	private String applicationName;
+
+	private String proxyURI;
+	private Integer proxyPort;
+	private String proxyUsername;
+	private String proxyPassword;
 
     public String getHost() {
         return host;
@@ -141,6 +149,56 @@ public class RESTConnectorConfig extends AbstractCentralConnectorConfig {
     public void setTrustStorePassword(String trustStorePassword) {
         this.trustStorePassword = trustStorePassword;
     }
+    
+    
+    public String getApplicationName() {
+		return applicationName;
+	}
+
+
+	public void setApplicationName(String applicationName) {
+		this.applicationName = applicationName;
+	}
+
+
+	public String getProxyURI() {
+		return proxyURI;
+	}
+
+
+	public void setProxyURI(String proxyURI) {
+		this.proxyURI = proxyURI;
+	}
+
+
+	public String getProxyUsername() {
+		return proxyUsername;
+	}
+
+
+	public void setProxyUsername(String proxyUsername) {
+		this.proxyUsername = proxyUsername;
+	}
+
+
+	public String getProxyPassword() {
+		return proxyPassword;
+	}
+
+
+	public void setProxyPassword(String proxyPassword) {
+		this.proxyPassword = proxyPassword;
+	}
+
+
+	public Integer getProxyPort() {
+		return proxyPort;
+	}
+
+
+	public void setProxyPort(Integer proxyPort) {
+		this.proxyPort = proxyPort;
+	}
 
     @Override
     public String toString() {

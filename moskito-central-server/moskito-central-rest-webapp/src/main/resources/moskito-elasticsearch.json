@@ -1,0 +1,12 @@
+{
+  "host": "http://10.1.30.3",
+  "port": "9210",
+  "api": "http",
+  "proxy": "false",
+  "clusterName": "elasticsearch",
+  "index": "snapshot",
+  "includeIntervals": "*",
+  "excludeIntervals": "",
+  "includeProducers": "JavaRuntimeTotal,Heap memory,*BC,ErrorProducer,ThreadStates,OS",
+  "excludeProducers": ""
+}

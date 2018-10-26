@@ -1,0 +1,36 @@
+{
+	"driver":"org.postgresql.Driver",
+	"url":"jdbc:postgresql://maxdata-dev:5432/maxdata?currentSchema=moskito",
+    "userName":"moskito",
+    "password":"moskito123",
+    "persistenceUnitName":"snapshotStorage",
+	"hibernateDialect":"org.hibernate.dialect.PostgreSQLDialect",
+
+    "@mappings" : [
+        {
+            "producerName": "SessionCount",
+            "statEntityClass":"org.moskito.central.storage.psql.HttpSessionStatisticsEntity"
+        },
+        {
+            "producerName": "*",
+            "statEntityClass": "org.moskito.central.storage.psql.ServiceStatsEntity"
+        },
+    ],
+	"@includeExclude": [
+        {
+            "includedProducers": "SessionCount",
+            "includedStats": "*",
+            "includedIntervals": "*"
+        },
+        {
+            "includedProducers": "RequestURIFilter",
+            "includedStats": "cumulated",
+            "includedIntervals": "5m,1h"
+        },
+        {
+            "includedProducers": "*",
+            "includedStats": "*",
+            "includedIntervals": "*"
+        }
+    ]
+}

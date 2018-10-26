@@ -22,12 +22,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement(name = "snsh")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({ HashMap.class })
-public class Snapshot implements Serializable {
+public class SnapshotTypeConverted implements Serializable {
 
 	/**
 	 * Serialversion uid.
 	 */
-	private static final long serialVersionUID = -1452811059878773956L;
+	private static final long serialVersionUID = -1452811053878773956L;
 
 	/**
 	 * The metadata. The metadata contains data about the snapshot like
@@ -40,13 +40,13 @@ public class Snapshot implements Serializable {
 	 * Stat values.
 	 */
 	@XmlJavaTypeAdapter(StatsMapAdapter.class)
-	private Map<String, Map<String, String>> stats = new HashMap<>();
+	private Map<String, Map<String, Object>> stats = new HashMap<>();
 
 
 	/**
 	 * Default constructor.
 	 */
-	public Snapshot() {
+	public SnapshotTypeConverted() {
 
 	}
 
@@ -67,7 +67,7 @@ public class Snapshot implements Serializable {
 	 * @param name
 	 * @param values
 	 */
-	public void addSnapshotData(String name, Map<String, String> values) {
+	public void addSnapshotData(String name, Map<String, Object> values) {
 		stats.put(name, values);
 	}
 
@@ -84,12 +84,12 @@ public class Snapshot implements Serializable {
 	 * @param stat
 	 * @return {@link Map}
 	 */
-	public Map<String, String> getStatistics(String stat) {
+	public Map<String, Object> getStatistics(String stat) {
 		return stats.get(stat);
 	}
 
 
-	public Set<Entry<String, Map<String, String>>> getEntrySet() {
+	public Set<Entry<String, Map<String, Object>>> getEntrySet() {
 		return stats.entrySet();
 	}
 
@@ -104,7 +104,7 @@ public class Snapshot implements Serializable {
 	 *
 	 * @return {@link Map}
 	 */
-	public Map<String, Map<String, String>> getStats() {
+	public Map<String, Map<String, Object>> getStats() {
 		if (stats == null) {
 			stats = new HashMap<>();
 		}
@@ -112,7 +112,7 @@ public class Snapshot implements Serializable {
 	}
 
 
-	public void setStats(Map<String, Map<String, String>> stats) {
+	public void setStats(Map<String, Map<String, Object>> stats) {
 		this.stats = stats;
 	}
 
@@ -122,7 +122,7 @@ public class Snapshot implements Serializable {
 	 * @author dagafonov
 	 *
 	 */
-	public static class StatsMapAdapter extends MapAdapter<String, Map<String, String>> {
+	public static class StatsMapAdapter extends MapAdapter<String, Map<String, Object>> {
 
 	}
 

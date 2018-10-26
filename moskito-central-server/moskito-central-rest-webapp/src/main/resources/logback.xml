@@ -86,12 +86,12 @@
 		</encoder>
 	</appender>
 
-	<logger name="net.anotheria.moskito" level="INFO" additivity="false">
-		<appender-ref ref="InfoAppender" />
-		<appender-ref ref="WarnAppender" />
-		<appender-ref ref="ErrorAppender" />
-		<appender-ref ref="ConsoleAppender" />
-	</logger>
+<!-- 	<logger name="net.anotheria.moskito" level="INFO" additivity="false"> -->
+<!-- 		<appender-ref ref="InfoAppender" /> -->
+<!-- 		<appender-ref ref="WarnAppender" /> -->
+<!-- 		<appender-ref ref="ErrorAppender" /> -->
+<!-- 		<appender-ref ref="ConsoleAppender" /> -->
+<!-- 	</logger> -->
 
 
 	<root level="ERROR">

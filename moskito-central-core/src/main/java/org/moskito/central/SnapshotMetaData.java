@@ -1,9 +1,10 @@
 package org.moskito.central;
 
+import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
 
 /**
  * Contains meta data about the snapshot like producerId, creation timestamp and
@@ -54,10 +55,14 @@ public class SnapshotMetaData implements Serializable {
 	 */
 	private String subsystem;
 
+	/** The application name. */
+	private String applicationName;
+
 	/**
 	 *
 	 */
 	private String statClassName;
+
 
 	/**
 	 * Default constructor.
@@ -66,91 +71,122 @@ public class SnapshotMetaData implements Serializable {
 		arrivalTimestamp = System.currentTimeMillis();
 	}
 
-    public String getProducerId() {
-        return producerId;
-    }
 
-    public SnapshotMetaData setProducerId(String producerId) {
-        this.producerId = producerId;
-        return this;
-    }
-
-    public String getComponentName() {
-        return componentName;
-    }
-
-    public SnapshotMetaData setComponentName(String componentName) {
-        this.componentName = componentName;
-        return this;
-    }
-
-    public String getHostName() {
-        return hostName;
-    }
-
-    public SnapshotMetaData setHostName(String hostName) {
-        this.hostName = hostName;
-        return this;
-    }
-
-    public String getIntervalName() {
-        return intervalName;
-    }
-
-    public SnapshotMetaData setIntervalName(String intervalName) {
-        this.intervalName = intervalName;
-        return this;
-    }
-
-    public long getCreationTimestamp() {
-        return creationTimestamp;
-    }
-
-    public SnapshotMetaData setCreationTimestamp(long creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
-        return this;
-    }
-
-    public long getArrivalTimestamp() {
-        return arrivalTimestamp;
-    }
-
-    public SnapshotMetaData setArrivalTimestamp(long arrivalTimestamp) {
-        this.arrivalTimestamp = arrivalTimestamp;
-        return this;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public SnapshotMetaData setCategory(String category) {
-        this.category = category;
-        return this;
-    }
-
-    public String getSubsystem() {
-        return subsystem;
-    }
-
-    public SnapshotMetaData setSubsystem(String subsystem) {
-        this.subsystem = subsystem;
-        return this;
-    }
-
-    public String getStatClassName() {
-        return statClassName;
-    }
-
-    public SnapshotMetaData setStatClassName(String statClassName) {
-        this.statClassName = statClassName;
-        return this;
-    }
-
-    @Override
-	public String toString() {
-		return "SnapshotMetaData [producerId=" + producerId + ", componentName=" + componentName + ", hostName=" + hostName + ", intervalName="
-				+ intervalName + ", creationTimestamp=" + creationTimestamp + ", arrivalTimestamp=" + arrivalTimestamp + ", category=" + category
-				+ ", subsystem=" + subsystem + ", statClassName=" + statClassName + "]";
+	public String getProducerId() {
+		return producerId;
 	}
+
+
+	public SnapshotMetaData setProducerId(String producerId) {
+		this.producerId = producerId;
+		return this;
+	}
+
+
+	public String getComponentName() {
+		return componentName;
+	}
+
+
+	public SnapshotMetaData setComponentName(String componentName) {
+		this.componentName = componentName;
+		return this;
+	}
+
+
+	public String getHostName() {
+		return hostName;
+	}
+
+
+	public SnapshotMetaData setHostName(String hostName) {
+		this.hostName = hostName;
+		return this;
+	}
+
+
+	public String getIntervalName() {
+		return intervalName;
+	}
+
+
+	public SnapshotMetaData setIntervalName(String intervalName) {
+		this.intervalName = intervalName;
+		return this;
+	}
+
+
+	public long getCreationTimestamp() {
+		return creationTimestamp;
+	}
+
+
+
+	public SnapshotMetaData setCreationTimestamp(long creationTimestamp) {
+		this.creationTimestamp = creationTimestamp;
+		return this;
+	}
+
+
+	public long getArrivalTimestamp() {
+		return arrivalTimestamp;
+	}
+
+
+	public SnapshotMetaData setArrivalTimestamp(long arrivalTimestamp) {
+		this.arrivalTimestamp = arrivalTimestamp;
+		return this;
+	}
+
+
+	public String getCategory() {
+		return category;
+	}
+
+
+	public SnapshotMetaData setCategory(String category) {
+		this.category = category;
+		return this;
+	}
+
+
+	public String getSubsystem() {
+		return subsystem;
+	}
+
+
+	public SnapshotMetaData setSubsystem(String subsystem) {
+		this.subsystem = subsystem;
+		return this;
+	}
+
+
+	public String getStatClassName() {
+		return statClassName;
+	}
+
+
+	public SnapshotMetaData setStatClassName(String statClassName) {
+		this.statClassName = statClassName;
+		return this;
+	}
+
+
+	public String getApplicationName() {
+		return applicationName;
+	}
+
+
+	public void setApplicationName(String applicationName) {
+		this.applicationName = applicationName;
+	}
+
+
+	@Override
+	public String toString() {
+		return "SnapshotMetaData [producerId=" + producerId + ", componentName=" + componentName + ", hostName=" + hostName + ", intervalName=" + intervalName +
+				", creationTimestamp=" + creationTimestamp + ", arrivalTimestamp=" + arrivalTimestamp + ", category=" + category + ", subsystem=" + subsystem +
+				", applicationName=" + applicationName + ", statClassName=" + statClassName + "]";
+	}
+
 }

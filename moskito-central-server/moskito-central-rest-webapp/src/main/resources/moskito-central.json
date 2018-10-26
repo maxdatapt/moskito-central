@@ -1,0 +1,9 @@
+{
+    "@storages": [
+		{
+            "name": "elasticsearch",
+            "clazz": "org.moskito.central.storage.elasticsearch.ElasticsearchStorage",
+            "configName": "moskito-elasticsearch"
+        }
+    ]
+}
